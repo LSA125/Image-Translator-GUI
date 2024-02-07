@@ -48,16 +48,14 @@ TRANSLATORS = ['google', 'youdao', 'baidu', 'deepl', 'papago',
                 'caiyun', 'gpt3', 'gpt3.5', 'gpt4', 'none', 'original', 'offline', 'nllb', 
                 'nllb_big', 'sugoi', 'jparacrawl', 'jparacrawl_big', 'm2m100', 'm2m100_big']
 OUTPUT_FORMATS = ['png','webp','jpg']
-INPAINTERS = ['default','lama_mpe','sd','none','original']  # Replace with actual choices
-UPSCALERS = ['waifu2x', 'esrgan', '4xultrasharp']  # Replace with actual choices
-COLORIZERS = ['none','mc2']  # Replace with actual choices
+INPAINTERS = ['default','lama_mpe','sd','none','original'] 
+UPSCALERS = ['waifu2x', 'esrgan', '4xultrasharp'] 
+COLORIZERS = ['none','mc2']  
 class General:
     def __init__(self, tab):
         tab.grid_columnconfigure((0,1), weight=1)
         tab.grid_rowconfigure((0,1,2,3,4,5,6,7,8), weight=1)
         self.tab = tab
-
-        # List of valid choices for the dropdowns
 
         # Label and Entry for 'target-lang'
         tk.CTkLabel(tab, text='Destination Language').grid(row=0, column=0, padx=5, pady=5)
@@ -68,6 +66,7 @@ class General:
         tk.CTkLabel(tab, text='Output Format').grid(row=1, column=0, padx=5, pady=5)
         self.format_var = tk.StringVar()
         tk.CTkComboBox(tab, variable=self.format_var, values=OUTPUT_FORMATS).grid(row=1, column=1, padx=5, pady=5)
+        
         # Label and Entry for 'inpainter'
         tk.CTkLabel(tab, text='Inpainter Model').grid(row=2, column=0, padx=5, pady=5)
         self.inpainter_var = tk.StringVar()
@@ -92,7 +91,7 @@ class General:
         self.translator_var = tk.StringVar()
         tk.CTkComboBox(tab, variable=self.translator_var, values=TRANSLATORS).grid(row=6, column=1, padx=5, pady=5)
         
-        tk.CTkLabel(tab, text='Manga to English Optimization').grid(row=7, column=0, padx=5, pady=5)
+        tk.CTkLabel(tab, text='Manga to Eng Optimization').grid(row=7, column=0, padx=5, pady=5)
         self.manga_var = tk.BooleanVar()
         tk.CTkCheckBox(tab, variable=self.manga_var,text='').grid(row=7, column=1, padx=5, pady=5)
         

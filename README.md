@@ -20,6 +20,4 @@
  
  Scrolling through all the filed saved until now is a WIP
  
- Implementing the a terminal inside the app is a WIP
- 
  

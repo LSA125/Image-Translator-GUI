@@ -5,3 +5,4 @@ from .AdvancedSettings import Advanced
 from .MiscSettings import Misc
 from .InputOutput import IO
 from .Translator import Translator
+from .Terminal import Terminal

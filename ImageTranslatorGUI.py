@@ -35,17 +35,18 @@ class MangaTranslatorGUI(Scripts.Tk):
         #OPTIONS SECTION
         optionsFrame = customtkinter.CTkFrame(self, border_width=0,corner_radius=0,width=appWidth/4)
         optionsFrame.grid(row=1, column=1, sticky="nsew")
-        tabView = customtkinter.CTkTabview(optionsFrame)
-        tabView.pack(fill="both", expand=True)
-        tabView.add("General")
-        tabView.add("Advanced")
-        tabView.add("Misc")
+        self.tabView = customtkinter.CTkTabview(optionsFrame)
+        self.tabView.pack(fill="both", expand=True)
+        self.tabView.add("General")
+        self.tabView.add("Advanced")
+        self.tabView.add("Misc")
+        self.tabView.add("Terminal")
         
-        self.generalSettings = Scripts.General(tabView.tab("General"))
-        self.advancedSettings = Scripts.Advanced(tabView.tab("Advanced"))
-        self.miscSettings = Scripts.Misc(tabView.tab("Misc"))
-        
-        self.translator = Scripts.Translator(self.on_translation_complete)
+        self.generalSettings = Scripts.General(self.tabView.tab("General"))
+        self.advancedSettings = Scripts.Advanced(self.tabView.tab("Advanced"))
+        self.miscSettings = Scripts.Misc(self.tabView.tab("Misc"))
+        self.terminal = Scripts.Terminal(self.tabView.tab("Terminal"))
+        self.translator = Scripts.Translator(self.on_translation_complete, self.terminal)
     
     def on_close(self):
         print("Closing")
@@ -74,6 +75,7 @@ class MangaTranslatorGUI(Scripts.Tk):
         #settings.update(self.advancedSettings.get_settings())
         #settings.update(self.miscSettings.get_settings())
         settings.update({'dest': outputFolder})
+        self.tabView.set("Terminal")
         self.translator.start_translate(filename, translatorDirectory, settings)
 
 if __name__ == "__main__":
