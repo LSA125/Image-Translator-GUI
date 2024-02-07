@@ -1,0 +1,4 @@
+#ignore .bak .dat .dir files
+*.bak
+*.dat
+*.dir
