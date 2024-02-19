@@ -57,8 +57,9 @@ class IO:
     def get_file(self):
         filetypes = [("Image Files", ".png .jpg .jpeg .bmp .webp"),("All Files", "*.*")]
         filename = filedialog.askopenfilename(title="Select a file", filetypes=filetypes)
-        self.dnd.update_image(filename)
+        image = Image.open(filename)
         self.callback(filename)
+        image.close()
         
     def get_image_folder(self):
         filename = filedialog.askdirectory(title="Select a folder")
@@ -66,7 +67,6 @@ class IO:
         first_image_file = self.get_first_image_in_folder(filename)
         if(first_image_file): 
             image = Image.open(first_image_file)
-            self.dnd.update_image(image)
             self.callback(filename)
             image.close()
 

@@ -9,15 +9,10 @@
 
  Drag and Drop or Select images/folders from your computer/browser
  
+ ![](https://github.com/LSA125/Image-Translator-GUI/Demo/ImageTranslatorDemo.gif)
+
  Leave Output section empty for single images to not be saved.
  
  Leave Output section empty for folders to automatically create an adjacent folder with the translated images in the same parent directory
-
-
-# Notes
-
- The Advanced and misc sections are a WIP
- 
- Scrolling through all the filed saved until now is a WIP
  
  
