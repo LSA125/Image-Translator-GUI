@@ -9,7 +9,7 @@
 
  Drag and Drop or Select images/folders from your computer/browser
  
- ![](https://github.com/LSA125/Image-Translator-GUI/Demo/ImageTranslatorDemo.gif)
+ ![](https://github.com/LSA125/Image-Translator-GUI/blob/main/Demo/ImageTranslatorDemo.gif)
 
  Leave Output section empty for single images to not be saved.
  
